@@ -11,7 +11,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Lib
             int k = 1;
             while (k <= 10)
             {
-                p *= (k / Math.Pow(Math.Cos(5) + 1.0, 2));
+                p = (k / Math.Pow(Math.Cos(5) + 1.0, 2));
                 k++;
             }
             return Math.Round(p, 6);
