@@ -1,8 +1,7 @@
-﻿using System;
-
-namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Lib
+﻿using tyuiu.cources.programming.interfaces.Sprint3;
+namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Lib;
 {
-    public class DataService
+    public class DataService: ISprint3Task2V3
     {
         public double CalculateSeriesSum(int x)
         {
@@ -18,5 +17,10 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Lib
 
             return s;
         }
+
+    public double GetSumSeries(int value, int startValue, int stopValue)
+    {
+        throw new NotImplementedException();
     }
+}
 }

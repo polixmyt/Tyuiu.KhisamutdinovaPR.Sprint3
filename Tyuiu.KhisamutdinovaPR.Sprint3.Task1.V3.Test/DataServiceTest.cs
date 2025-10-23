@@ -3,16 +3,15 @@ using Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Lib;
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Test
 {
     [TestClass]
-    public class DataServiceTest
+    public sealed class DataServiceTest
     {
         [TestMethod]
-        public void Calculate_Product_Ok()
+        public void Calculate_Product_IsCorrect()
         {
             var ds = new DataService();
-            double got = ds.Calculate();
-            // Контрольное значение вычислено заранее
-            double expected = 0.040722;
-            Assert.AreEqual(expected, got, 1e-6);
+            double expected = 24589.4082117849;
+            double actual = ds.Calculate();
+            Assert.AreEqual(expected, actual, 1e-6);
         }
     }
 }
