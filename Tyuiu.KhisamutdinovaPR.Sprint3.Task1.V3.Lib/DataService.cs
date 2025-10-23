@@ -9,7 +9,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Lib
         public double Calculate()
         {
             double p = 1.0;
-            double den = Math.Pow(Math.Cos(5) + 1.0, 2.0); // важно: (cos(5)+1)^2
+            double den = Math.Pow(Math.Cos(5) + 1, 2); // важно: (cos(5)+1)^2
             int k = 1;
 
             while (k <= 10)
