@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3;
 using Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Lib;
-
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Test
 {
     [TestClass]
