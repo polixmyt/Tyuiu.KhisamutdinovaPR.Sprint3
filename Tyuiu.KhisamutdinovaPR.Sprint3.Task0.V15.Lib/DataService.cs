@@ -1,17 +1,16 @@
-﻿using System;
+﻿using tyuiu.cources.programming.interfaces.Sprint3;
+namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task0.V15.Lib;
 
-namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task0.V15.Lib
+public class DataService : ISprint3Task0V15
+
 {
-    public class DataService
+    public double GetSumSeries(double value, int startValue, int stopValue)
     {
-        public double Calculate(double t)
+        double summ = 0;
+        for (int i = startValue; i <= stopValue; i++)
         {
-            double s = 0;
-            for (int k = 1; k <= 10; k++)
-            {
-                s += (Math.Pow(t, k) + 2.0 / (k + 1)) * Math.Sin(t);
-            }
-            return Math.Round(s, 3);
+            summ += (Math.Pow(value, i) + 2/(i + 1)) * Math.Sin(value);
         }
+        return Math.Round(summ, 3);
     }
 }
