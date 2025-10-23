@@ -9,7 +9,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task0.V15
         {
             Console.Title = "Спринт #3 | Выполнила Хисамутдинова Полина Руслановна | Вариант 15";
 
-            DataService ds = new DataService();
+            DataService ds = new DataService(); 
 
             double t = 0.7;
             double result = ds.Calculate(t);
