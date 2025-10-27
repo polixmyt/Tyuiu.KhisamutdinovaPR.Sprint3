@@ -18,20 +18,15 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib
             // Внешний цикл по i (первый диапазон)
             for (int i = startValue1; i <= stopValue1; i++)
             {
-                double innerSum = 0; // Внутренняя сумма для каждого i
-
                 // Внутренний цикл по k (второй диапазон)
                 for (int k = startValue2; k <= stopValue2; k++)
                 {
                     // Вычисляем значение: sin(x) + 2/k
                     double term = Math.Sin(x) + (2.0 / k);
 
-                    // Добавляем к внутренней сумме
-                    innerSum += term;
+                    // Добавляем к общей сумме
+                    totalSum += term;
                 }
-
-                // Добавляем внутреннюю сумму к общей сумме
-                totalSum += innerSum;
             }
 
             // Округляем результат до 3 знаков после запятой

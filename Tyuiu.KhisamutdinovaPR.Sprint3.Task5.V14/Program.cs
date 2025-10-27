@@ -47,12 +47,23 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14
 
             Console.WriteLine($"Значение двойной суммы y = {result}");
 
-            // Дополнительная информация для понимания вычислений
-            Console.WriteLine("\nДополнительная информация:");
-            Console.WriteLine($"sin({x}) = {Math.Round(Math.Sin(x), 3)}");
-            Console.WriteLine($"Количество итераций по i: {stopValue1 - startValue1 + 1}");
-            Console.WriteLine($"Количество итераций по k: {stopValue2 - startValue2 + 1}");
-            Console.WriteLine($"Общее количество вычислений: {(stopValue1 - startValue1 + 1) * (stopValue2 - startValue2 + 1)}");
+            // Проверочные вычисления
+            Console.WriteLine("\nПроверочные вычисления:");
+            double sinX = Math.Sin(x);
+            Console.WriteLine($"sin({x}) = {Math.Round(sinX, 6)}");
+
+            double sum2k = 0;
+            for (int k = 1; k <= 14; k++)
+            {
+                sum2k += 2.0 / k;
+            }
+            Console.WriteLine($"Сумма 2/k для k=1..14 = {Math.Round(sum2k, 6)}");
+
+            double totalSin = 3 * 14 * sinX;
+            double total2k = 3 * sum2k;
+            Console.WriteLine($"Общая часть от sin(x): {Math.Round(totalSin, 6)}");
+            Console.WriteLine($"Общая часть от 2/k: {Math.Round(total2k, 6)}");
+            Console.WriteLine($"Итог: {Math.Round(totalSin + total2k, 3)}");
 
             Console.ReadKey();
         }
