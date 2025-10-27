@@ -1,28 +1,38 @@
 ﻿using System;
-using tyuiu.cources.programming.interfaces.Sprint3;
 
-namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task4.V29.Lib
+namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V29.Lib
 {
-    public class DataService : ISprint3Task4V29
+    public class DataService
     {
         public double Calculate(int startValue, int stopValue)
         {
-            double sum = 0;
-
-            for (int x = -5; x <= 5; x++)
+            // Проверка корректности диапазона
+            if (startValue > stopValue)
             {
-                if (x == 0) continue;
+                throw new ArgumentException("Начальное значение не может быть больше конечного");
+            }
 
-                double y = Math.Cos(x) / x;
+            double sum = 0; // Инициализация суммы
+
+            // Проходим по всем значениям x в заданном диапазоне
+            for (int x = startValue; x <= stopValue; x++)
+            {
+                // Пропускаем x = 0, так как при x=0 будет деление на ноль
+                if (x == 0)
+                {
+                    continue; // Переходим к следующей итерации цикла
+                }
+
+                // Вычисляем значение функции y = cos(x) / x
+                double cosX = Math.Cos(x); // Вычисляем косинус x
+                double y = cosX / x;       // Вычисляем значение функции
+
+                // Добавляем значение к сумме
                 sum += y;
             }
 
-            return Math.Round(sum, 3);
-        }
-
-        public double Calculate()
-        {
-            throw new NotImplementedException();
+            // Округляем сумму до 2 знаков после запятой
+            return Math.Round(sum, 2);
         }
     }
 }
