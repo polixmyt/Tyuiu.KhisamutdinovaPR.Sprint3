@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V22.Lib\Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V22.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
