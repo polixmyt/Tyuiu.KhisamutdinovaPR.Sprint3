@@ -11,8 +11,8 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3
 
             DataService ds = new DataService();
 
-            int x = 4;
-            double result = ds.CalculateSeriesSum(x);
+            int value = 4;
+            double result = ds.GetSumSeries(value);
 
             Console.WriteLine("************************************************************");
             Console.WriteLine("* Спринт #3                                                *");
@@ -21,7 +21,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3
             Console.WriteLine("* Вариант 3                                                *");
             Console.WriteLine("* Выполнила: Хисамутдинова Полина Руслановна, ПКТб-25-1    *");
             Console.WriteLine("************************************************************");
-            Console.WriteLine($"Результат вычисления суммы ряда при x = {x} равен: {result}");
+            Console.WriteLine($"Результат вычисления суммы ряда при x = {value} равен: {result}");
             Console.WriteLine("************************************************************");
 
             Console.ReadKey();

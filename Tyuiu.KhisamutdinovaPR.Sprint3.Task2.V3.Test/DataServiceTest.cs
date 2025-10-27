@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using System;
 using Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Lib;
 
@@ -11,7 +12,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Test
         public void TestCalculateSeriesSum()
         {
             DataService ds = new DataService();
-            double result = ds.CalculateSeriesSum(4);
+            double result = ds.GetSumSeries(4);
             double expected = 0;
 
             int x = 4;

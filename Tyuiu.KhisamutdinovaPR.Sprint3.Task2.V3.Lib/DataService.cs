@@ -3,14 +3,14 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task2.V3.Lib;
 
 public class DataService : ISprint3Task2V3
 {
-    public double CalculateSeriesSum(int x)
+    public double GetSumSeries(int value, int startValue, int stopValue)
     {
         double s = 0;
         int i = 1;
 
         do
         {
-            s += (Math.Pow(x, 2) * i) + 1;
+            s += (Math.Pow(value, 2) * i) + 1;
             i++;
         }
         while (i <= 15);
@@ -18,7 +18,7 @@ public class DataService : ISprint3Task2V3
         return s;
     }
 
-    public double GetSumSeries(int value, int startValue, int stopValue)
+    public double GetSumSeries(int value)
     {
         throw new NotImplementedException();
     }
