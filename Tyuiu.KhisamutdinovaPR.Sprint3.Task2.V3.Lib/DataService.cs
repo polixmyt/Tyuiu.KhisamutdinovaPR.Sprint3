@@ -17,9 +17,4 @@ public class DataService : ISprint3Task2V3
 
         return s;
     }
-
-    public double GetSumSeries(int value)
-    {
-        throw new NotImplementedException();
-    }
 }
