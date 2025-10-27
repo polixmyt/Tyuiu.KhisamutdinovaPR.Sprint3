@@ -1,29 +1,43 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint3;
 using System;
+using System;
 
-namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task1.V3.Lib
+namespace Tyuiu.KhisamutdinovPR.Sprint3.Task1.V3.Lib
 {
     public class DataService: ISprint3Task1V3
     {
-        // p = Π_{k=1..10} ( k / (cos(5) + 1)^2 )
-        public double Calculate()
+        public double GetMultiplySeries(int startValue, int stopValue)
         {
-            double p = 1.0;
-            double den = Math.Pow(Math.Cos(5) + 1, 2); // важно: (cos(5)+1)^2
+            // Инициализируем произведение единицей (нейтральный элемент для умножения)
+            double product = 1;
+
+            // Начальное значение k
             int k = 1;
 
+            // Вычисляем константу один раз для оптимизации
+            double denominator = Math.Pow(Math.Cos(5) + 1, 2);
+
+            // Цикл while от k=1 до k=10
             while (k <= 10)
             {
-                p *= k / den;   // k/int → double, т.к. den — double
+                // Вычисляем текущий элемент ряда: k / (cos(5) + 1)²
+                double term = k / denominator;
+
+                // Умножаем произведение на текущий элемент
+                product *= term;
+
+                // Увеличиваем k на 1 для следующей итерации
                 k++;
             }
 
-            return Math.Round(p, 3); // 24589.408
+            // Округляем результат до 3 знаков после запятой
+            return Math.Round(product, 3);
         }
 
-        public double GetMultiplySeries(int startValue, int stopValue)
+        public double GetMultiplySeries()
         {
             throw new NotImplementedException();
         }
     }
 }
+
