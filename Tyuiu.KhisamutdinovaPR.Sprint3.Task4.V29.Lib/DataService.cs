@@ -1,10 +1,11 @@
 ﻿using System;
+using tyuiu.cources.programming.interfaces.Sprint3;
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task4.V29.Lib
 {
-    public class DataService
+    public class DataService : ISprint3Task4V29
     {
-        public double GetSumSeries()
+        public double Calculate(int startValue, int stopValue)
         {
             double sum = 0;
 
@@ -17,6 +18,11 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task4.V29.Lib
             }
 
             return Math.Round(sum, 3);
+        }
+
+        public double Calculate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

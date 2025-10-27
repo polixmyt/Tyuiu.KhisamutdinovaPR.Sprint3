@@ -11,7 +11,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task4.V29.Test
         public void TestGetSumSeries()
         {
             DataService ds = new DataService();
-            double result = ds.GetSumSeries();
+            double result = ds.Calculate();
 
             double expected = -0.241; // предварительно вычисленное значение
             Assert.AreEqual(expected, result);

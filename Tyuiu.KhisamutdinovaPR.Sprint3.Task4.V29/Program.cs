@@ -22,7 +22,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task4.V29
             Console.WriteLine("* пропустив x=0                               *");
             Console.WriteLine("***********************************************");
 
-            double result = ds.GetSumSeries();
+            double result = ds.Calculate();
 
             Console.WriteLine($"Результат вычислений: {result}");
             Console.ReadKey();
