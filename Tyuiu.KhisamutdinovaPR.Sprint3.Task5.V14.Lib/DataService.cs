@@ -1,30 +1,40 @@
 ﻿using System;
-using tyuiu.cources.programming.interfaces.Sprint3;  
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14.Lib
 {
-    public class DataService : ISprint3Task5V14
+    public class DataService
     {
-        // Сумма по двум индексам: i = iStart..iEnd, k = kStart..kEnd
-        // y = Σ_i Σ_k (sin(x) + 2/k)
         public double GetSumSumSeries(int iStart, int iEnd, int kStart, int kEnd, double x)
         {
-            double sum = 0.0;
-
-            for (int i = iStart; i <= iEnd; i++)
+            // Проверка корректности диапазонов
+            if (iStart > iEnd || kStart > kEnd)
             {
-                for (int k = kStart; k <= kEnd; k++)
-                {
-                    sum += Math.Sin(x) + 2.0 / k;
-                }
+                throw new ArgumentException("Начальные значения не могут быть больше конечных");
             }
 
-            return sum;
-        }
+            double totalSum = 0; // Общая сумма
 
-        public double GetSumSumSeries(int x, int startValue1, int startValue2, int stopValue1, int stopValue2)
-        {
-            throw new NotImplementedException();
+            // Внешний цикл по i от iStart до iEnd
+            for (int i = iStart; i <= iEnd; i++)
+            {
+                double innerSum = 0; // Внутренняя сумма для каждого i
+
+                // Внутренний цикл по k от kStart до kEnd
+                for (int k = kStart; k <= kEnd; k++)
+                {
+                    // Вычисляем значение: sin(x) + 2/k
+                    double term = Math.Sin(x) + (2.0 / k);
+
+                    // Добавляем к внутренней сумме
+                    innerSum += term;
+                }
+
+                // Добавляем внутреннюю сумму к общей сумме
+                totalSum += innerSum;
+            }
+
+            // Округляем результат до 3 знаков после запятой
+            return Math.Round(totalSum, 3);
         }
     }
 }
