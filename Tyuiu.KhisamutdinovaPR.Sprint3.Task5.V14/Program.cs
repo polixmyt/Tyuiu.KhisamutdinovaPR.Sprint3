@@ -1,20 +1,20 @@
 ﻿using System;
-using Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14.Lib;
+using Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib;
 
-namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14
+namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "Спринт #3 | Выполнил: Variant 14 | ИСТНб-23-1";
+            Console.Title = "Спринт #3 | Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
             Console.WriteLine("* Тема: Вложенные циклы                                                   *");
             Console.WriteLine("* Задание #3                                                              *");
             Console.WriteLine("* Вариант #14                                                             *");
-            Console.WriteLine("* Выполнил: Variant 14 | ИСТНб-23-1                                       *");
+            Console.WriteLine("* Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1                               *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Вычислить значение двойной суммы:                                       *");
@@ -24,15 +24,15 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int iStart = 1;
-            int iEnd = 3;
-            int kStart = 1;
-            int kEnd = 14;
-            double x = 5;
+            int x = 5;
+            int startValue1 = 1; // начало диапазона для i
+            int stopValue1 = 3;  // конец диапазона для i
+            int startValue2 = 1; // начало диапазона для k
+            int stopValue2 = 14; // конец диапазона для k
 
-            Console.WriteLine($"* Диапазон i: от {iStart} до {iEnd}                                          *");
-            Console.WriteLine($"* Диапазон k: от {kStart} до {kEnd}                                         *");
             Console.WriteLine($"* Значение x: {x}                                                          *");
+            Console.WriteLine($"* Диапазон i: от {startValue1} до {stopValue1}                                            *");
+            Console.WriteLine($"* Диапазон k: от {startValue2} до {stopValue2}                                           *");
             Console.WriteLine($"* Формула: y = ∑[i=1,3] ∑[k=1,14] (sin(x) + 2/k)                          *");
 
             Console.WriteLine("***************************************************************************");
@@ -43,16 +43,16 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14
             DataService ds = new DataService();
 
             // Вычисляем значение двойной суммы
-            double result = ds.GetSumSumSeries(iStart, iEnd, kStart, kEnd, x);
+            double result = ds.GetSumSumSeries(x, startValue1, startValue2, stopValue1, stopValue2);
 
             Console.WriteLine($"Значение двойной суммы y = {result}");
 
             // Дополнительная информация для понимания вычислений
             Console.WriteLine("\nДополнительная информация:");
             Console.WriteLine($"sin({x}) = {Math.Round(Math.Sin(x), 3)}");
-            Console.WriteLine($"Количество итераций по i: {iEnd - iStart + 1}");
-            Console.WriteLine($"Количество итераций по k: {kEnd - kStart + 1}");
-            Console.WriteLine($"Общее количество вычислений: {(iEnd - iStart + 1) * (kEnd - kStart + 1)}");
+            Console.WriteLine($"Количество итераций по i: {stopValue1 - startValue1 + 1}");
+            Console.WriteLine($"Количество итераций по k: {stopValue2 - startValue2 + 1}");
+            Console.WriteLine($"Общее количество вычислений: {(stopValue1 - startValue1 + 1) * (stopValue2 - startValue2 + 1)}");
 
             Console.ReadKey();
         }
