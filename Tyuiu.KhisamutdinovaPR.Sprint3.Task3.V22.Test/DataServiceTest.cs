@@ -8,22 +8,22 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V22.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void GetMaxConsecutiveB_ReturnsCorrectValue()
+        public void GetMaxCharCount_ReturnsCorrectValue()
         {
             DataService ds = new DataService();
             string text = "thbbbb dsfbg bbg";
             int expected = 4;
-            int result = ds.GetMaxConsecutiveB(text);
+            int result = ds.GetMaxCharCount(text);
             Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void GetMaxConsecutiveB_NoBs_ReturnsZero()
+        public void GetMaxCharCount_NoBs_ReturnsZero()
         {
             DataService ds = new DataService();
             string text = "hello world";
             int expected = 0;
-            int result = ds.GetMaxConsecutiveB(text);
+            int result = ds.GetMaxCharCount(text);
             Assert.AreEqual(expected, result);
         }
     }

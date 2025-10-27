@@ -1,10 +1,16 @@
 ﻿using System;
+using tyuiu.cources.programming.interfaces.Sprint3;
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V22.Lib
 {
-    public class DataService
+    public class DataService : ISprint3Task3V22
     {
-        public int GetMaxConsecutiveB(string input)
+        public int GetMaxCharCount(string value, char item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaxCharCount(string input)
         {
             int maxCount = 0;
             int currentCount = 0;

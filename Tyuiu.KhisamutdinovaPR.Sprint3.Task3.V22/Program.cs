@@ -18,7 +18,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task3.V22
             DataService ds = new DataService();
             string text = "thbbbb dsfbg bbg";
 
-            int result = ds.GetMaxConsecutiveB(text);
+            int result = ds.GetMaxCharCount(text);
 
             Console.WriteLine("Исходная строка: " + text);
             Console.WriteLine("Максимальное количество подряд идущих 'b': " + result);
