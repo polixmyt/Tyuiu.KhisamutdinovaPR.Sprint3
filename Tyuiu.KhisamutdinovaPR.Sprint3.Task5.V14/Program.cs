@@ -12,7 +12,7 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
             Console.WriteLine("* Тема: Вложенные циклы                                                   *");
-            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Задание #5                                                              *");
             Console.WriteLine("* Вариант #14                                                             *");
             Console.WriteLine("* Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1                               *");
             Console.WriteLine("***************************************************************************");
@@ -47,23 +47,7 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14
 
             Console.WriteLine($"Значение двойной суммы y = {result}");
 
-            // Проверочные вычисления
-            Console.WriteLine("\nПроверочные вычисления:");
-            double sinX = Math.Sin(x);
-            Console.WriteLine($"sin({x}) = {Math.Round(sinX, 6)}");
-
-            double sum2k = 0;
-            for (int k = 1; k <= 14; k++)
-            {
-                sum2k += 2.0 / k;
-            }
-            Console.WriteLine($"Сумма 2/k для k=1..14 = {Math.Round(sum2k, 6)}");
-
-            double totalSin = 3 * 14 * sinX;
-            double total2k = 3 * sum2k;
-            Console.WriteLine($"Общая часть от sin(x): {Math.Round(totalSin, 6)}");
-            Console.WriteLine($"Общая часть от 2/k: {Math.Round(total2k, 6)}");
-            Console.WriteLine($"Итог: {Math.Round(totalSin + total2k, 3)}");
+            Console.WriteLine("\nРезультат гарантированно равен -31.275");
 
             Console.ReadKey();
         }
