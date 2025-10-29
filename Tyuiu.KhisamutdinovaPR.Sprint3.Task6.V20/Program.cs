@@ -3,40 +3,82 @@ using Tyuiu.KhisamutdinovaPR.Sprint3.Task6.V20.Lib;
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task6.V20
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "Спринт #3 | Выполнила: Хисамутдинова П.Р. | Вариант 20";
+            Console.Title = "Спринт #3 | Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
-            Console.WriteLine("* Тема: Использование операторов цикла for                                *");
-            Console.WriteLine("* Задание №6                                                              *");
-            Console.WriteLine("* Вариант №20                                                             *");
-            Console.WriteLine("* Выполнила: Хисамутдинова Полина Руслановна, группа ПКТб-25-1            *");
+            Console.WriteLine("* Тема: Оператор цикла for                                                *");
+            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Вариант #20                                                             *");
+            Console.WriteLine("* Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1                               *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* Условие:                                                                *");
-            Console.WriteLine("* Найти среди целых чисел, принадлежащих отрезку [20, 32],                *");
-            Console.WriteLine("* количество всех делителей меньше 12.                                    *");
+            Console.WriteLine("* УСЛОВИЕ:                                                                *");
+            Console.WriteLine("* Напишите программу, которая ищет среди целых чисел, принадлежащих      *");
+            Console.WriteLine("* числовому отрезку [20, 32] сумму всех делителей меньше 12.             *");
+            Console.WriteLine("*                                                                         *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
+            int startValue = 20;
+            int stopValue = 32;
+
+            Console.WriteLine($"* Старт диапазона: {startValue}                                           *");
+            Console.WriteLine($"* Конец диапазона: {stopValue}                                            *");
+            Console.WriteLine($"* Ищем делители: меньше 12                                                *");
+
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("***************************************************************************");
+
+            // Создаем объект сервиса
             DataService ds = new DataService();
 
-            int start = 20;
-            int end = 32;
-            int limit = 12;
+            // Вычисляем сумму делителей
+            int result = ds.GetSumTheDivisors(startValue, stopValue);
 
-            int result = ds.GetSumDivisors(start, end, limit);
+            Console.WriteLine($"Сумма всех делителей меньше 12 в диапазоне [{startValue}, {stopValue}] = {result}");
 
-            Console.WriteLine($"Отрезок: [{start}; {end}]");
-            Console.WriteLine($"Порог делителя: меньше {limit}");
-            Console.WriteLine("--------------------------------------------------------------------------");
-            Console.WriteLine($"Результат: {result}");
-            Console.WriteLine("--------------------------------------------------------------------------");
+            // Дополнительная информация - детальный анализ
+            Console.WriteLine("\nДетальный анализ:");
+            PrintDetailedAnalysis(startValue, stopValue);
 
-            Console.WriteLine("Нажмите любую клавишу для завершения...");
             Console.ReadKey();
+        }
+
+        static void PrintDetailedAnalysis(int start, int stop)
+        {
+            Console.WriteLine("+----------+---------------------+----------+");
+            Console.WriteLine("|  Число   | Делители < 12       |  Сумма   |");
+            Console.WriteLine("+----------+---------------------+----------+");
+
+            int totalSum = 0;
+
+            for (int number = start; number <= stop; number++)
+            {
+                string divisors = "";
+                int sumForNumber = 0;
+
+                for (int d = 1; d < 12; d++)
+                {
+                    if (number % d == 0)
+                    {
+                        divisors += d + " ";
+                        sumForNumber += d;
+                    }
+                }
+
+                totalSum += sumForNumber;
+                Console.WriteLine($"|{number,5}    | {divisors,-18} | {sumForNumber,5}    |");
+            }
+
+            Console.WriteLine("+----------+---------------------+----------+");
+            Console.WriteLine($"| Общая сумма: {totalSum,40} |");
+            Console.WriteLine("+-------------------------------------------+");
         }
     }
 }
