@@ -1,13 +1,13 @@
 ﻿using System;
-using Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib;
+using Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14.Lib;
 
-namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14
+namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task5.V14
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Title = "Спринт #3 | Выполнил: Хисамутдинов П. Р. | ИСТНб-23-1";
+            Console.Title = "Спринт #3 | Выполнил: Хисамутдиновa П. Р. | ИСТНб-23-1";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
