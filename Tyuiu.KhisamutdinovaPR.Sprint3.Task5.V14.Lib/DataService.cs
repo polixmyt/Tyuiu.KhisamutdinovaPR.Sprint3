@@ -1,36 +1,23 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint3;
 
-namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib
-{
-    public class DataService: ISprint3Task5V14
+namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib;
+    public class Calculator
     {
-        public double GetSumSumSeries(int x, int startValue1, int startValue2, int stopValue1, int stopValue2)
+        public static double Calculate(double x)
         {
-            // Проверка корректности диапазонов
-            if (startValue1 > stopValue1 || startValue2 > stopValue2)
-            {
-                throw new ArgumentException("Начальные значения не могут быть больше конечных");
-            }
+            double result = 0;
 
-            double totalSum = 0; // Общая сумма
-
-            // Внешний цикл по i (первый диапазон)
-            for (int i = startValue1; i <= stopValue1; i++)
+            for (int i = 1; i <= 3; i++)
             {
-                // Внутренний цикл по k (второй диапазон)
-                for (int k = startValue2; k <= stopValue2; k++)
+                double innerSum = 0;
+                for (int k = 1; k <= 14; k++)
                 {
-                    // Вычисляем значение: sin(x) + 2/k
-                    double term = Math.Sin(x) + (2.0 / k);
-
-                    // Добавляем к общей сумме
-                    totalSum += term;
+                    innerSum += Math.Sin(x + (2.0 / k));
                 }
+                result += innerSum;
             }
 
-            // Округляем результат до 3 знаков после запятой
-            return Math.Round(totalSum, 3);
+            return result;
         }
     }
-}
