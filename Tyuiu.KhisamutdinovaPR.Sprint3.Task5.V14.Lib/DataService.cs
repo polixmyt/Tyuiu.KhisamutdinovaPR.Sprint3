@@ -2,7 +2,7 @@
 using tyuiu.cources.programming.interfaces.Sprint3;
 
 namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib;
-    public class Calculator
+public class Calculator : ISprint3Task5V14
     {
         public static double Calculate(double x)
         {
@@ -20,4 +20,9 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Lib;
 
             return result;
         }
+
+    public double GetSumSumSeries(int x, int startValue1, int startValue2, int stopValue1, int stopValue2)
+    {
+        throw new NotImplementedException();
     }
+}
