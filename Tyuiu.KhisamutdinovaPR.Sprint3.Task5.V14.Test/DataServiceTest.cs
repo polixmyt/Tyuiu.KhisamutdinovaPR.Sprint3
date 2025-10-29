@@ -14,7 +14,7 @@ namespace Tyuiu.KhisamutdinovPR.Sprint3.Task5.V14.Test
             double expected = -31.275; // Ожидаемый результат из задания
 
             // Act
-            double actual = Calculator.Calculate(x);
+            double actual = GetSumSumSeries(int x, int startValue1, int startValue2, int stopValue1, int stopValue2)
 
             // Assert
             Assert.AreEqual(expected, actual, 0.001, "Результат не совпадает с ожидаемым");

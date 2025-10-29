@@ -10,7 +10,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task6.V20.Test
         public void CountDivisorsLessThan12_InRange20to32_Returns41()
         {
             var ds = new DataService();
-            int actual = ds.GetDivisorsCountInRange(20, 32, 12);
+            int actual = ds.GetSumDivisors(20, 32, 12);
             int expected = 41; // вручную подсчитано
             Assert.AreEqual(expected, actual);
         }

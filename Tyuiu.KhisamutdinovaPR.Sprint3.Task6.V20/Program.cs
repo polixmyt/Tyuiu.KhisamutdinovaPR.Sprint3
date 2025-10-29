@@ -27,7 +27,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint3.Task6.V20
             int end = 32;
             int limit = 12;
 
-            int result = ds.GetDivisorsCountInRange(start, end, limit);
+            int result = ds.GetSumDivisors(start, end, limit);
 
             Console.WriteLine($"Отрезок: [{start}; {end}]");
             Console.WriteLine($"Порог делителя: меньше {limit}");
